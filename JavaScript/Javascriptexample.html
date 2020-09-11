@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Javascript Example</title>
+        <script>
+            function myfunction1(a,b){
+
+                document.getElementById("demo").innerHTML=a*b;
+            }
+        </script>
+        <script src="myscript.js"></script>
+    </head>
+    <body>
+        <p id="demo"></p>
+        <button type="button" onclick="myfunction1(4,3)">Try it</button>
+        <p id="new"></p>
+         <button type="button" onclick="myfunction()">External script</button>
+         <script>document.write(5+6)</script>
+
+         <p id="var"></p>
+             <script >
+                 var a,b,c;
+                 a=5;
+                 b=2;
+                 c=a+b;
+                 document.getElementById("var").innerHTML=c;
+             </script>
+
+             <p id="demo1"></p>
+             <p id="demo2"></p>
+             <script>
+             var txt = "abdsdsd"
+             var len = txt.length
+             document.getElementById("demo1").innerHTML=len;
+             var cars = ["Saab", "Volvo", "BMW"];
+             document.getElementById("demo2").innerHTML = cars[0] + cars.length;
+             </script>
+             <p id="demo3"></p>
+             <script>
+                 var person={
+                     firstName:"Devashree",
+                     lastName:"Patole",
+                     age:"22"
+                 }
+                 document.getElementById("demo3").innerHTML=person.firstName +" "+ person.lastName;
+             </script>
+             
+             
+         
+    </body>
+</html>

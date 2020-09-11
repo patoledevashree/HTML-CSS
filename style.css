@@ -1,0 +1,14 @@
+body{
+	background-image: url(download.jfif);
+	opacity:100%;
+	background-attachment: fixed;
+
+}
+form{
+	margin-left:25%;
+	margin-right: 25%;
+}
+fieldset{
+	height: auto;
+	width: auto;
+}
