@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>example</title>
+    <style>
+        #container {
+            height: 400px;
+            width: 400px;
+            background-color: yellow;
+            position: relative;
+        }
+
+        #animate {
+            height: 50px;
+            width: 50px;
+            background-color: red;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--<script>document.write(Date());</script>-->
+    <!--<p id="demo">Hello World</p>
+        <script>
+            var x= document.getElementById("demo");
+            x.innerHTML="Hello DOM"
+
+        </script>-->
+
+    <!--<img src="./../clock.jpg" id="new">
+        <script>
+            var x = document.getElementById("new");
+            x.src = "./../mumbai.jpg"; 
+        </script>-->
+    <!-- <p id="style">Hello World</p>
+        <script>
+            document.getElementById("style").style.color="red";
+        </script>-->
+    <!--<p id="p1">Hello DOM</p>
+        <button type="button" onclick='document.getElementById("p1").style.color="red"'>Change Color</button>-->
+    <!--<p id="p1">Hello DOM</p>
+        <button onclick='document.getElementById("p1").style.visibility="hidden"'>Hide text</button>
+        <button onclick='document.getElementById("p1").style.visibility="visible"'>Show text</button>-->
+
+    <!--Animation-->
+    <!--<button onclick="move()">Click me</button><br><br>
+        <div id="container">
+            <div id="animate"></div>
+        </div>
+        <script>
+            function move(){
+                var element = document.getElementById("animate");
+                var pos=0;
+                var id= setInterval(frame,5);
+                function frame(){
+                    if(pos == 350){
+                        clearInterval(id);
+                    }
+                    else{
+                        pos++;
+                        element.style.top= pos + 'px';
+                        element.style.left= pos +'px';
+                    }
+                }
+            }
+            
+
+        </script>-->
+
+    <!--Events in DOM -->
+    <!--<h1 onclick="this.innerHTML= 'Hello'">
+            Wlcome to Neosoft
+        </h1>-->
+    <!--<h1 onclick="changeText(this)">Welcome to Neosoft</h1>
+    <script>
+        function changeText(id) {
+            id.innerHTML = "Hello";
+        }
+
+    </script>-->
+    <!--<button id="myBtn">Date</button>
+
+    <p id="demo"></p>
+
+    <script>
+        document.getElementById("myBtn").onclick = displayDate;
+
+        function displayDate() {
+            document.getElementById("demo").innerHTML = Date();
+        }
+    </script>-->
+
+    <div onmouseover="mouseOver(this)" onmouseout="mouseOut(this)"
+        style="background-color:#D94A38;width:120px;height:20px;padding:40px;">
+        Mouse Over Me
+    </div>
+
+    <script>
+        function mouseOver(object) {
+            object.innerHTML = "Thank You";
+        }
+
+        function mouseOut(object) {
+            object.innerHTML = "Mouse Over Me"
+        }
+    </script>
+<br><br>
+    <div onmousedown="mDown(this)" onmouseup="mUp(this)"
+        style="background-color:#D94A38;width:90px;height:20px;padding:40px;">
+        Click Me</div>
+
+    <script>
+        function mDown(obj) {
+            obj.style.backgroundColor = "#1ec5e5";
+            obj.innerHTML = "Release Me";
+        }
+
+        function mUp(obj) {
+            obj.style.backgroundColor = "#D94A38";
+            obj.innerHTML = "Thank You";
+        }
+    </script>
+<br><br>
+    <button id="myBtn">Date</button>
+
+    <p id="demo"></p>
+
+    <script>
+        document.getElementById("myBtn").addEventListener("click",displayDate);
+        var x = document.getElementById("myBtn");
+        x.addEventListener("click",eventfunction);
+        function displayDate() {
+            document.getElementById("demo").innerHTML = Date();
+        }
+        function eventfunction(){
+            alert("Hello World");
+        }
+    </script>
+
+
+</body>
+
+</html>

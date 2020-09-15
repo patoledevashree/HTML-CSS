@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            DOM Example
+        </title>
+    </head>
+    <body>
+        <!--Finding Elements by id-->
+        <!--<p id="intro">Hello World</p>
+        <p id="demo"></p>
+        <script>
+            var element = document.getElementById("intro");
+            document.getElementById("demo").innerHTML= "The html of id into is "+element.innerHTML;
+        </script>-->
+        <!--Finding Elements by tagname-->
+        <!--<p>Elements by tag name</p>
+        <p id="demo"></p>
+        <script>
+            var x=  document.getElementsByTagName("p");
+            document.getElementById("demo").innerHTML="The tag elements are "+ x[0].innerHTML;
+        </script>-->
+        <!--<div id="main">
+            <p> Hello welcome to Neosoft</p>
+            <p>Second Para</p>
+        </div>
+        <p id="demo"></p>
+        <script>
+            var x= document.getElementById("main");
+            var y= x.getElementsByTagName("p");
+            document.getElementById("demo").innerHTML="The tag elements are "+ y[0].innerHTML;
+
+        </script>-->
+        <!--<p class="intro">Hello Dom</p>
+        <p class="intro">Hello World</p>
+        <p id="demo"></p>
+        <script>
+            var x = document.getElementsByClassName("intro");
+            document.getElementById("demo").innerHTML = "The element by class is"+ x[0].innerHTML;
+        </script>-->
+        <!--<p class="intro">Hello Dom</p>
+        <p class="intro">Hello World</p>
+        <p id="demo"></p>
+        <script>
+            var x = document.querySelectorAll("p.intro");
+            document.getElementById("demo").innerHTML = "The element by class is"+ x[1].innerHTML;
+        </script>-->
+        <form id="frm1">
+            FirstName: <input type="text" name="fname" value="Devashree"><br><br>
+            LastName: <input type="text" name="lname" value="Patole"><br><br>
+            <input type="submit" value="submit">
+
+        </form>
+        <button type="button" onclick="myfunction()">Click</button>
+        <p id="demo"></p>
+        <script>
+            function myfunction(){
+                var x= document.forms["frm1"];
+             var text = "";
+             var i;
+             for(i=0;i< x.length;i++){
+                 text += x.elements[i].value+"<br>";
+             }
+             document.getElementById("demo").innerHTML = text;
+            }
+           
+        </script>
+    <!--<form id="frm1" action="/action_page.php">
+        First name: <input type="text" name="fname" value="Donald"><br>
+        Last name: <input type="text" name="lname" value="Duck"><br><br>
+        <input type="submit" value="Submit">
+      </form> 
+      
+      <p>Click "Try it" to display the value of each element in the form.</p>
+      
+      <button onclick="myFunction1()">Try it</button>
+      
+      <p id="demo"></p>
+      
+      <script>
+      function myFunction1() {
+        var x = document.forms["frm1"];
+        var text = "";
+        var i;
+        for (i = 0; i < x.length ;i++) {
+          text += x.elements[i].value + "<br>";
+        }
+        document.getElementById("demo").innerHTML = text;
+      }
+      </script>-->
+    </body>
+</html>
