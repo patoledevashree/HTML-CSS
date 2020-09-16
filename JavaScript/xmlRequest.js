@@ -32,6 +32,16 @@ function sendHttpRequest(method, url, data) {
 function getData() {
     sendHttpRequest('GET', 'https://reqres.in/api/users').then(responseData => {
         console.log(responseData);
+        
+        var x = responseData.data;
+        console.log(x);
+        var text ="";
+        var i;
+        for (i = 0; i < x.length; i++) {
+            text += x[i].first_name + "<br>";
+          }
+       
+        document.getElementById("demo").innerHTML = text;
     });
 }
 

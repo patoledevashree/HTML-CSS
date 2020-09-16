@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JSON Example</title>
+    </head>
+    <body>
+<!--<p id="demo"></p>
+
+<script>
+var myObj = {
+  "name":"John",
+  "age":30,
+  "cars": {
+  "car1":"Ford",
+  "car2":"BMW",
+  "car3":"Fiat"
+  }
+}
+document.getElementById("demo").innerHTML += myObj.cars.car2 + "<br>";
+//or:
+document.getElementById("demo").innerHTML += myObj.cars["car2"];
+</script>-->
+
+<p id="demo"></p>
+
+<script>
+var myObj, i, x = "";
+myObj = {
+  "name":"John",
+  "age":30,
+  "cars":[ "Ford", "BMW", "Fiat" ]
+};
+
+for (i = 0; i < myObj.cars.length; i++) {
+  x += myObj.cars[i] + "<br>";
+}
+document.getElementById("demo").innerHTML = x;
+</script>
+
+</body>
+</html>
