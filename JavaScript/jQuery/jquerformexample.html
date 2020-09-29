@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        jQuery Example
+    </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <form id="form-id">
+        <label>First Name</label>
+        <input type="text" id="firstname">
+        <small id="fname_error" style="visibility: hidden;color: red;">Fill Name</small>
+        <label>last Name</label>
+        <input type="text" id="lastname">
+        <small id="lname_error" style="visibility:hidden;color: red;">lastname</small>
+        <button type="submit">Submit</button>
+    </form>
+    <script>
+        $(document).ready(function () {
+            $('#firstname,#form-id').on('blur submit', function (e) {
+                    var letters = /^[A-Za-z]+$/;
+                    var text = $('#firstname').val();
+                    console.log(text)
+                    if (text.match(letters)) {
+                        $('#firstname').css('border','1px solid green');
+                        $('#fname_error').css('visibility','hidden');
+                    }
+                    else {
+                        $('#firstname').css('border','1px solid red');
+                        $('#fname_error').css('visibility','visible');
+                    }
+                    e.preventDefault();
+                }
+            );
+            $('#lastname,#form-id').on('blur submit', function () {
+                    var letters = /^[A-Za-z]+$/;
+                    var text = $('#lastname').val();
+                    console.log(text)
+                    if (text.match(letters)) {
+                        $('#lastname').css('border','1px solid green');
+                        $('#lname_error').css('visibility','hidden');
+                    }
+                    else {
+                        $('#lastname').css('border','1px solid red');
+                        $('#lname_error').css('visibility','visible');
+                    }
+                }
+            );
+        });
+
+    </script>
+</body>
+
+</html>

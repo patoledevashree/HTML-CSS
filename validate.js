@@ -11,17 +11,20 @@ var pwd_error = document.getElementById('pwd_error');
 var fname_alpha = document.getElementById('fname_alpha');
 var lname_alpha = document.getElementById('lname_alpha');
 
+fname.addEventListner('textInput',verify);
 
 function validated() {
     var regex = /^[a-zA-Z]+$/;
-    if(regex.test(fname.value) == false){
+    if( fname.value!= "" && regex.test(fname.value) == false){
         fname.style.border = "1px solid red";
         fname_alpha.style.display ="block";
+        fname.focus();
         return false;
     }
-    if(regex.test(lname.value) == false){
+    if( fname.value!= "" && regex.test(lname.value) == false){
         fname.style.border = "1px solid red";
         lname_alpha.style.display ="block";
+        lname.focus();
         return false;
     }
     if (fname.value == "") {
@@ -49,4 +52,14 @@ function validated() {
         return false;
     }
     
+}
+
+function verify(){
+    var regex = /^[a-zA-Z]+$/;
+    if(fname.value!= "" && regex.test(fname.value) == true ){
+        fname.style.border = "1px solid silver";
+        fname_alpha.style.display ="none";
+        fname_error.style.display = "none";
+        return true;
+    }
 }

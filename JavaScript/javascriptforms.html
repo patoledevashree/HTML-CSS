@@ -1,36 +1,48 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>
-            Form validation
-        </title>
-    </head>
-    
-    <body>
-        <form name="myform">
+
+<head>
+    <title>
+        Form validation
+    </title>
+</head>
+
+<body>
+    <form name="myform" id="form-id" onsubmit="return validateform()">
         <label>FirstName</label>
-        <input type="text" name="fname"  id = "firstname" onchange="myfunction(this.id)"><br><br>
+        <input type="text" name="fname" id="firstname" onchange="myfunction(this.id)"><br><br>
+        <p id="demo1"></p>
         <label>LastName</label>
         <input type="text" name="lname" id="lname" onchange="myfunction(this.id)"><br><br>
-       <button type="button" onclick="validateform()">Submit</button>
-        </form>
-        <p id="demo"></p>
-        <script>
-            function validateform(){
-              var fname = document.forms["myform"]["fname"].value;
-              var lname = document.forms["myform"]["lname"].value;
-              if(fname == ""){
-                  alert("FirstName is not filled");
-              }
-              if(lname == ""){
-                  alert("LastName is not filled");
-              }
+        <p id="demo2"></p>
+        <button type="submit">Submit</button>
+    </form>
+    <p id="demo"></p>
+    <script>
+        function validateform() {
+            var error_msg = 0;
+            if (document.getElementById('firstname').value == "") {
+                error_msg++;
+                document.getElementById('firstname').style.border = "1px solid red";
+                document.getElementById('demo1').innerHTML="Please Fill This Feld";
+                document.getElementById('demo1').style.color="red";
             }
+            if (document.getElementById('lname').value == "") {
+                error_msg++;
+                document.getElementById('lname').style.border = "1px solid red";
+                document.getElementById('demo2').innerHTML="Please Fill This Feld";
+                document.getElementById('demo2').style.color="red";
+            }
+            if (error_msg != 0) {
+                return false;
+            }
+        }
 
-            function myfunction(id){
-                var x = document.getElementById(id);
-                x.value= x.value.toUpperCase();
-            }
-        </script> 
-    </body>
+        function myfunction(id) {
+            var x = document.getElementById(id);
+            x.value = x.value.toUpperCase();
+        }
+    </script>
+</body>
+
 </html>
